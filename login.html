@@ -1,64 +1,182 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Login - Latihan Matematika</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('{{ url_for('static', filename='login_bg.jpg') }}');
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Landing Page</title>
+  <style>
+    :root {
+      --accent-blue: #0078d4;
+      --text-color: #333;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        .login-container {
-            background-color: rgba(255, 255, 255, 0.85);
-            width: 300px;
-            margin: 240px auto;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            text-align: center;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .login-container h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
+    body {
+      font-family: var(--font-family);
+      background-color: #fff;
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
 
-        .login-container input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
+    header {
+      padding: 2rem;
+      text-align: center;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
 
-        .login-container button {
-            background-color: #2980b9;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6rem 2rem;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
 
-        .login-container button:hover {
-            background-color: #1c5980;
-        }
-    </style>
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .hero .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero button {
+      padding: 1rem 2rem;
+      background-color: var(--accent-blue);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero button:hover {
+      background-color: #005a9e;
+    }
+
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background-color: #fafafa;
+    }
+
+    .benefit {
+      flex: 1 1 250px;
+      max-width: 300px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 2rem;
+      text-align: center;
+      animation: slideUp 1s ease;
+    }
+
+    .benefit i {
+      font-size: 2rem;
+      color: var(--accent-blue);
+      margin-bottom: 1rem;
+    }
+
+    .grid-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+    }
+
+    .grid-item {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <form method="POST">
-        <div class="login-container">
-            <h2>Masukkan Nama</h2>
-            <input type="text" name="nama" placeholder="Nama lengkap..." required>
-            <button type="submit">Mulai</button>
-        </div>
-    </form>
+  <header>
+    <h2>Selamat Datang Operator Sekolah Selogiri</h2>
+  </header>
+
+  <section class="hero">
+    <h1>Ini adalah Website sederhana untuk memudahkan pekerjaan kita.</h1>
+    <p>Silahkan gunakan menu dibawah sesuai kebutuhan.</p>
+    <div class="button-group">
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+  <a href="https://pastebin.com/N71vGZQW" target="_blank" rel="noopener noreferrer">
+    <button>Kumpulan Link Penting</button>
+  </a>
+  <a href="https://drive.google.com/drive/folders/1pXrU7DPzbJiiOIOkRGPRD7bBkdCqXVr9?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <button>Dokumentasi</button>
+  </a>
+</div>
+      <button onclick="alert('Fitur ini belum tersedia')">Learn More</button>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="benefit">
+      <i class="fas fa-bolt"></i>
+      <h3>Fast & Lightweight</h3>
+      <p>Built for performance, optimized for speed across all devices.</p>
+    </div>
+    <div class="benefit">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Secure by Design</h3>
+      <p>Modern best practices ensure your data stays safe.</p>
+    </div>
+    <div class="benefit">
+      <i class="fas fa-sync-alt"></i>
+      <h3>Seamless Integration</h3>
+      <p>Connect effortlessly with your existing tools and workflows.</p>
+    </div>
+  </section>
+
+  <section class="grid-section">
+    <div class="grid-item">Responsive Layout</div>
+    <div class="grid-item">Smooth Animations</div>
+    <div class="grid-item">Minimalist UI Components</div>
+    <div class="grid-item">Accessibility Focus</div>
+  </section>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
