@@ -124,6 +124,13 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 600px) {
       .hero h1 {
         font-size: 2rem;
@@ -133,7 +140,7 @@
 </head>
 <body>
   <header style="background-image: url('8cd04466-ebe1-48c1-907b-053b22e5e6a4.png'); background-size: cover; background-position: center; padding: 4rem 2rem; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">
-    <h2>Selamat Datang Operator Sekolah Kecamatan Selogiri</h2>
+    <h2 style="font-size: 2.5rem; color: black; animation: fadeDown 1s ease forwards; opacity: 0;">Selamat Datang Operator Sekolah Kecamatan Selogiri</h2>
   </header>
 
   <section class="hero">
